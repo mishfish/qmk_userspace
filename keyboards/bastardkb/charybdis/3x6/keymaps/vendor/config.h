@@ -25,7 +25,8 @@
 /* Disable unused features. */
 #    define NO_ACTION_ONESHOT
 #endif // __arm__
-
+#define TAPPING_TERM 250  // Adjust as needed
+#define QUICK_TAP_TERM 180  // Optional
 /* Charybdis-specific features. */
 
 #ifdef POINTING_DEVICE_ENABLE
@@ -34,4 +35,3 @@
 // - `CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD`
 // #define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 #endif // POINTING_DEVICE_ENABLE
-#define MAX_DEFERRED_EXECUTORS 10

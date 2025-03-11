@@ -23,9 +23,6 @@ enum charybdis_keymap_layers {
     LAYER_POINTER,
 };
 
-#define TAPPING_TERM 250
-#define QUICK_TAP_TERM 180
-
 /** \brief Automatically enable sniping-mode on the pointer layer. */
 #define CHARYBDIS_AUTO_SNIPING_ON_LAYER LAYER_POINTER
 
