@@ -86,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ╭──────────────────────────────────────────────────────╮ ╭────────────────────────────────────────-──────────────╮
        XXXXXXX, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,       KC_6,       KC_7,    KC_8,    KC_9,   KC_RBRC, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,    KC_LEFT,    KC_DOWN,  KC_UP,   KC_RGHT, KC_PMNS, XXXXXXX,
+       XXXXXXX, HM_LCTL, HM_LALT, HM_LGUI, HM_LSFT, XXXXXXX,    KC_LEFT,    KC_DOWN,  KC_UP,   KC_RGHT, KC_PMNS, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  EE_CLR, QK_BOOT,    KC_HOME,    KC_PGDN,  KC_PGUP, KC_END, CW_TOGG, XXXXXXX,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
@@ -110,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
        QK_BOOT,  EE_CLR, XXXXXXX, XXXXXXX, DPI_MOD, S_D_MOD,    S_D_MOD, DPI_MOD, XXXXXXX, XXXXXXX,  EE_CLR, QK_BOOT,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,    XXXXXXX, KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI, XXXXXXX,
+       XXXXXXX, HM_LCTL, HM_LALT, HM_LGUI, HM_LSFT, XXXXXXX,    XXXXXXX, HM_RSFT, HM_RGUI, HM_RALT, HM_RCTL, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        XXXXXXX, _______, DRGSCRL, SNIPING, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, SNIPING, DRGSCRL, _______, XXXXXXX,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
@@ -160,7 +160,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 void rgb_matrix_update_pwm_buffers(void);
 #endif
 
-const uint16_t PROGMEM esc_combo[] = {KC_Q, KC_A, COMBO_END};
+const uint16_t PROGMEM esc_combo[] = {KC_Q, HM_LCTL, COMBO_END};
 const uint16_t PROGMEM lpar_combo[] = {KC_Q, KC_W, COMBO_END};
 const uint16_t PROGMEM rpar_combo[] = {KC_O, KC_P, COMBO_END};
 const uint16_t PROGMEM lbkt_combo[] = {KC_W, KC_E, COMBO_END};
@@ -172,7 +172,7 @@ const uint16_t PROGMEM tilda_combo[] = {KC_Y, KC_U, COMBO_END};
 const uint16_t PROGMEM quot_combo[] = {KC_P, KC_SCLN, COMBO_END};
 
 const uint16_t PROGMEM prntscr_combo[] = {KC_R, KC_E, KC_W, COMBO_END};
-const uint16_t PROGMEM ide_b_combo[] = {KC_Q, KC_A, KC_Z, COMBO_END};
+const uint16_t PROGMEM ide_b_combo[] = {KC_Q, HM_LCTL, KC_Z, COMBO_END};
 const uint16_t PROGMEM ide_f_combo[] = {KC_SCLN, KC_P, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM ide_go_edit_combo[] = {KC_P, KC_O, KC_I, COMBO_END};
 
