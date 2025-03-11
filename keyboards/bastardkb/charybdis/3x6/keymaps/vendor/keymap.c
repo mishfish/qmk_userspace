@@ -241,8 +241,8 @@ combo_t key_combos[] = {
     COMBO(grave_combo, KC_GRV),
     COMBO(tilda_combo, KC_TILD),
     COMBO(quot_combo, KC_QUOT),
-//     COMBO(prntscr_combo, QK_MACRO_0),  // Replace with actual macro function
-//     COMBO(ide_b_combo, QK_MACRO_1),    // Replace with actual macro function
-//     COMBO(ide_f_combo, QK_MACRO_2),    // Replace with actual macro function
-//     COMBO(ide_go_edit_combo, QK_MACRO_3) // Replace with actual macro function
+    COMBO(prntscr_combo, PRNTSCR_MACRO),
+    COMBO(ide_b_combo, IDE_B_MACRO),
+    COMBO(ide_f_combo, IDE_F_MACRO),
+    COMBO(ide_go_edit_combo, IDE_GO_EDIT_MACRO)
 };
