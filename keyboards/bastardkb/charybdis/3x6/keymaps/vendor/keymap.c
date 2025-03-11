@@ -42,7 +42,7 @@ static uint16_t auto_pointer_layer_timer = 0;
 #define RAISE MO(LAYER_RAISE)
 #define PT_Z LT(LAYER_POINTER, KC_Z)
 #define PT_LCMD LT(LAYER_LOWER, KC_LGUI)
-#define PT_RCMD MT(KC_RGUI, KC_ENT)
+#define PT_RCMD MT(KC_RCMD, KC_ENT)
 #define PT_BCSPC LT(LAYER_RAISE, KC_BSPC)
 #define PT_SPC LT(LAYER_LOWER, KC_SPC)
 #define PT_TAB LT(LAYER_RAISE, KC_TAB)
