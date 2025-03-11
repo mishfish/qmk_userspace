@@ -23,6 +23,60 @@ enum charybdis_keymap_layers {
     LAYER_POINTER,
 };
 
+enum custom_keycodes {
+     PRNTSCR_MACRO = SAFE_RANGE,
+     IDE_B_MACRO,
+     IDE_F_MACRO,
+     IDE_GO_EDIT_MACRO
+ };
+
+
+ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+     switch (keycode) {
+         case PRNTSCR_MACRO:
+             if (record->event.pressed) {
+                 register_code(KC_LSFT);
+                 register_code(KC_LCMD);
+                 tap_code(KC_4);
+                 unregister_code(KC_LSFT);
+                 unregister_code(KC_LCMD);
+             }
+             return false;
+ 
+         case IDE_B_MACRO:
+             if (record->event.pressed) {
+                 register_code(KC_LALT);
+                 register_code(KC_LCMD);
+                 tap_code(KC_LEFT);
+                 unregister_code(KC_LALT);
+                 unregister_code(KC_LCMD);
+             }
+             return false;
+ 
+         case IDE_F_MACRO:
+             if (record->event.pressed) {
+                 register_code(KC_LALT);
+                 register_code(KC_LCMD);
+                 tap_code(KC_RIGHT);
+                 unregister_code(KC_LALT);
+                 unregister_code(KC_LCMD);
+             }
+             return false;
+ 
+         case IDE_GO_EDIT_MACRO:
+             if (record->event.pressed) {
+                 register_code(KC_LSFT);
+                 register_code(KC_LCMD);
+                 tap_code(KC_BSPC);
+                 unregister_code(KC_LSFT);
+                 unregister_code(KC_LCMD);
+             }
+             return false;
+     }
+     return true;
+}
+
+
 /** \brief Automatically enable sniping-mode on the pointer layer. */
 #define CHARYBDIS_AUTO_SNIPING_ON_LAYER LAYER_POINTER
 
