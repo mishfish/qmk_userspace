@@ -16,12 +16,41 @@
  */
 #include QMK_KEYBOARD_H
 
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+     if (!process_smtd(keycode, record)) return false;
+     if (!process_sm_layouts(keycode, record)) return false;
+     if (!process_smunicode(keycode, record)) return false;
+ 
+     return true;
+}
+
+enum custom_keycodes {
+     SMTD_KEYCODES_BEGIN = SAFE_RANGE,
+     CKC_A, // reads as C(ustom) + KC_A, but you may give any name here
+     CKC_S,
+     CKC_D,
+     CKC_F,
+     SMTD_KEYCODES_END,
+};
+#include "sm_td.h"
+
+
 enum charybdis_keymap_layers {
     LAYER_BASE = 0,
     LAYER_LOWER,
     LAYER_RAISE,
     LAYER_POINTER,
 };
+
+void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
+     switch (keycode) {
+         SMTD_MT(CKC_A, KC_A, KC_LEFT_CTRL)
+         SMTD_MT(CKC_S, KC_S, KC_LEFT_ALT)
+         SMTD_MT(CKC_D, KC_D, KC_LEFT_GUI)
+         SMTD_MT(CKC_F, KC_F, KC_LSFT)
+     }
+}
+
 
 /** \brief Automatically enable sniping-mode on the pointer layer. */
 #define CHARYBDIS_AUTO_SNIPING_ON_LAYER LAYER_POINTER
@@ -54,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
        RGB_TOG,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_MNXT,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       KC_VOLU,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,       KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_MPLY,
+       KC_VOLU,    CKC_A,   CKC_S,   CKC_D,   CKC_F,   KC_G,       KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_MPLY,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        KC_VOLD,    PT_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, PT_SLSH, KC_MPRV,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
