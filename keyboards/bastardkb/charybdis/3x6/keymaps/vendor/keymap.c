@@ -138,7 +138,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [LAYER_LOWER] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮ ╭────────────────────────────────────────-──────────────╮
-       XXXXXXX, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,       KC_6,       KC_7,    KC_8,    KC_9,   KC_RBRC, XXXXXXX,
+       XXXXXXX, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,       KC_6,       KC_7,    KC_8,    KC_9,   KC_0, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        XXXXXXX, HM_LCTL, HM_LALT, HM_LGUI, HM_LSFT, XXXXXXX,    KC_LEFT,    KC_DOWN,  KC_UP,   KC_RGHT, KC_PMNS, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
@@ -223,7 +223,7 @@ const uint16_t PROGMEM lbrc_combo[] = {KC_E, KC_R, COMBO_END};
 const uint16_t PROGMEM rbrc_combo[] = {KC_U, KC_I, COMBO_END};
 const uint16_t PROGMEM grave_combo[] = {KC_R, KC_T, COMBO_END};
 const uint16_t PROGMEM tilda_combo[] = {KC_Y, KC_U, COMBO_END};
-const uint16_t PROGMEM quot_combo[] = {KC_P, KC_SCLN, COMBO_END};
+const uint16_t PROGMEM quot_combo[] = {KC_P, HM_RCTL, COMBO_END};
 
 const uint16_t PROGMEM prntscr_combo[] = {KC_R, KC_E, KC_W, COMBO_END};
 const uint16_t PROGMEM ide_b_combo[] = {KC_Q, HM_LCTL, KC_Z, COMBO_END};
