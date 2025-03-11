@@ -48,25 +48,25 @@ static uint16_t auto_pointer_layer_timer = 0;
 #define PT_TAB LT(LAYER_RAISE, KC_TAB)
 #define PT_SLSH LT(LAYER_POINTER, KC_SLSH)
 
-// #define HM_LGUI MT(MOD_LGUI, KC_D)  // Left GUI when held, 'D' when tapped
-// #define HM_LALT MT(MOD_LALT, KC_S)  // Left Alt when held, 'S' when tapped
-// #define HM_LCTL MT(MOD_LCTL, KC_A)  // Left Ctrl when held, 'A' when tapped
-// #define HM_LSFT MT(MOD_LSFT, KC_F)  // Left Shift when held, 'F' when tapped
+#define HM_LGUI MT(MOD_LGUI, KC_D)  // Left GUI when held, 'D' when tapped
+#define HM_LALT MT(MOD_LALT, KC_S)  // Left Alt when held, 'S' when tapped
+#define HM_LCTL MT(MOD_LCTL, KC_A)  // Left Ctrl when held, 'A' when tapped
+#define HM_LSFT MT(MOD_LSFT, KC_F)  // Left Shift when held, 'F' when tapped
 
-// #define HM_RSFT MT(MOD_RSFT, KC_J)  // Right Shift when held, 'J' when tapped
-// #define HM_RCTL MT(MOD_RCTL, KC_SCLN)  // Right Ctrl when held, ';' when tapped
-// #define HM_RALT MT(MOD_RALT, KC_L)  // Right Alt when held, 'L' when tapped
-// #define HM_RGUI MT(MOD_RGUI, KC_K)  // Right GUI when held, 'K' when tapped
+#define HM_RSFT MT(MOD_RSFT, KC_J)  // Right Shift when held, 'J' when tapped
+#define HM_RCTL MT(MOD_RCTL, KC_SCLN)  // Right Ctrl when held, ';' when tapped
+#define HM_RALT MT(MOD_RALT, KC_L)  // Right Alt when held, 'L' when tapped
+#define HM_RGUI MT(MOD_RGUI, KC_K)  // Right GUI when held, 'K' when tapped
 
-#define HM_LGUI HOLD_TAP(KC_D, MOD_LGUI, TAPPING_TERM)
-#define HM_LALT HOLD_TAP(KC_S, MOD_LALT, TAPPING_TERM)
-#define HM_LCTL HOLD_TAP(KC_A, MOD_LCTL, TAPPING_TERM)
-#define HM_LSFT HOLD_TAP(KC_F, MOD_LSFT, TAPPING_TERM)
+// #define HM_LGUI HOLD_TAP(KC_D, MOD_LGUI, TAPPING_TERM)
+// #define HM_LALT HOLD_TAP(KC_S, MOD_LALT, TAPPING_TERM)
+// #define HM_LCTL HOLD_TAP(KC_A, MOD_LCTL, TAPPING_TERM)
+// #define HM_LSFT HOLD_TAP(KC_F, MOD_LSFT, TAPPING_TERM)
 
-#define HM_RSFT HOLD_TAP(KC_J, MOD_RSFT, TAPPING_TERM)
-#define HM_RCTL HOLD_TAP(KC_SCLN, MOD_RCTL, TAPPING_TERM)
-#define HM_RALT HOLD_TAP(KC_L, MOD_RALT, TAPPING_TERM)
-#define HM_RGUI HOLD_TAP(KC_K, MOD_RGUI, TAPPING_TERM)
+// #define HM_RSFT HOLD_TAP(KC_J, MOD_RSFT, TAPPING_TERM)
+// #define HM_RCTL HOLD_TAP(KC_SCLN, MOD_RCTL, TAPPING_TERM)
+// #define HM_RALT HOLD_TAP(KC_L, MOD_RALT, TAPPING_TERM)
+// #define HM_RGUI HOLD_TAP(KC_K, MOD_RGUI, TAPPING_TERM)
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
