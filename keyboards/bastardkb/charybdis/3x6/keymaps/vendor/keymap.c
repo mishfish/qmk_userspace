@@ -16,21 +16,6 @@
  */
 #include QMK_KEYBOARD_H
 
-enum custom_keycodes {
-     SMTD_KEYCODES_BEGIN = SAFE_RANGE,
-     CKC_A, // reads as C(ustom) + KC_A, but you may give any name here
-     CKC_S,
-     CKC_D,
-     CKC_F,
-     SMTD_KEYCODES_END,
-};
-#include "sm_td.h"
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-     if (!process_smtd(keycode, record)) return false;
-     return true;
-}
-
 enum charybdis_keymap_layers {
     LAYER_BASE = 0,
     LAYER_LOWER,
@@ -38,15 +23,8 @@ enum charybdis_keymap_layers {
     LAYER_POINTER,
 };
 
-void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
-     switch (keycode) {
-         SMTD_MT(CKC_A, KC_A, KC_LEFT_CTRL)
-         SMTD_MT(CKC_S, KC_S, KC_LEFT_ALT)
-         SMTD_MT(CKC_D, KC_D, KC_LEFT_GUI)
-         SMTD_MT(CKC_F, KC_F, KC_LSFT)
-     }
-}
-
+#define TAPPING_TERM 250
+#define QUICK_TAP_TERM 180
 
 /** \brief Automatically enable sniping-mode on the pointer layer. */
 #define CHARYBDIS_AUTO_SNIPING_ON_LAYER LAYER_POINTER
@@ -73,13 +51,33 @@ static uint16_t auto_pointer_layer_timer = 0;
 #define PT_TAB LT(LAYER_RAISE, KC_TAB)
 #define PT_SLSH LT(LAYER_POINTER, KC_SLSH)
 
+// #define HM_LGUI MT(MOD_LGUI, KC_D)  // Left GUI when held, 'D' when tapped
+// #define HM_LALT MT(MOD_LALT, KC_S)  // Left Alt when held, 'S' when tapped
+// #define HM_LCTL MT(MOD_LCTL, KC_A)  // Left Ctrl when held, 'A' when tapped
+// #define HM_LSFT MT(MOD_LSFT, KC_F)  // Left Shift when held, 'F' when tapped
+
+// #define HM_RSFT MT(MOD_RSFT, KC_J)  // Right Shift when held, 'J' when tapped
+// #define HM_RCTL MT(MOD_RCTL, KC_SCLN)  // Right Ctrl when held, ';' when tapped
+// #define HM_RALT MT(MOD_RALT, KC_L)  // Right Alt when held, 'L' when tapped
+// #define HM_RGUI MT(MOD_RGUI, KC_K)  // Right GUI when held, 'K' when tapped
+
+#define HM_LGUI HOLD_TAP(KC_D, MOD_LGUI, TAPPING_TERM)
+#define HM_LALT HOLD_TAP(KC_S, MOD_LALT, TAPPING_TERM)
+#define HM_LCTL HOLD_TAP(KC_A, MOD_LCTL, TAPPING_TERM)
+#define HM_LSFT HOLD_TAP(KC_F, MOD_LSFT, TAPPING_TERM)
+
+#define HM_RSFT HOLD_TAP(KC_J, MOD_RSFT, TAPPING_TERM)
+#define HM_RCTL HOLD_TAP(KC_SCLN, MOD_RCTL, TAPPING_TERM)
+#define HM_RALT HOLD_TAP(KC_L, MOD_RALT, TAPPING_TERM)
+#define HM_RGUI HOLD_TAP(KC_K, MOD_RGUI, TAPPING_TERM)
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_BASE] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
-       RGB_TOG,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_MNXT,
+       RGB_TOG,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_MNXT,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       KC_VOLU,    CKC_A,   CKC_S,   CKC_D,   CKC_F,   KC_G,       KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_MPLY,
+       KC_VOLU,    HM_LCTL, HM_LALT, HM_LGUI, HM_LSFT, KC_G,       KC_H,    HM_RSFT, HM_RGUI, HM_RALT, HM_RCTL, KC_MPLY,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        KC_VOLD,    PT_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, PT_SLSH, KC_MPRV,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
