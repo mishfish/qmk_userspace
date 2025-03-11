@@ -139,3 +139,36 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 // Forward-declare this helper function since it is defined in rgb_matrix.c.
 void rgb_matrix_update_pwm_buffers(void);
 #endif
+
+const uint16_t PROGMEM esc_combo[] = {KC_Q, KC_A, COMBO_END};
+const uint16_t PROGMEM lpar_combo[] = {KC_Q, KC_W, COMBO_END};
+const uint16_t PROGMEM rpar_combo[] = {KC_O, KC_P, COMBO_END};
+const uint16_t PROGMEM lbkt_combo[] = {KC_W, KC_E, COMBO_END};
+const uint16_t PROGMEM rbkt_combo[] = {KC_I, KC_O, COMBO_END};
+const uint16_t PROGMEM lbrc_combo[] = {KC_E, KC_R, COMBO_END};
+const uint16_t PROGMEM rbrc_combo[] = {KC_U, KC_I, COMBO_END};
+const uint16_t PROGMEM grave_combo[] = {KC_R, KC_T, COMBO_END};
+const uint16_t PROGMEM tilda_combo[] = {KC_Y, KC_U, COMBO_END};
+const uint16_t PROGMEM quot_combo[] = {KC_P, KC_SCLN, COMBO_END};
+
+const uint16_t PROGMEM prntscr_combo[] = {KC_R, KC_E, KC_W, COMBO_END};
+const uint16_t PROGMEM ide_b_combo[] = {KC_Q, KC_A, KC_Z, COMBO_END};
+const uint16_t PROGMEM ide_f_combo[] = {KC_SCLN, KC_P, KC_SLSH, COMBO_END};
+const uint16_t PROGMEM ide_go_edit_combo[] = {KC_P, KC_O, KC_I, COMBO_END};
+
+combo_t key_combos[] = {
+    COMBO(esc_combo, KC_ESC),
+    COMBO(lpar_combo, KC_LPRN),
+    COMBO(rpar_combo, KC_RPRN),
+    COMBO(lbkt_combo, KC_LBKT),
+    COMBO(rbkt_combo, KC_RBKT),
+    COMBO(lbrc_combo, KC_LBRC),
+    COMBO(rbrc_combo, KC_RBRC),
+    COMBO(grave_combo, KC_GRV),
+    COMBO(tilda_combo, KC_TILD),
+    COMBO(quot_combo, KC_QUOT),
+//     COMBO(prntscr_combo, QK_MACRO_0),  // Replace with actual macro function
+//     COMBO(ide_b_combo, QK_MACRO_1),    // Replace with actual macro function
+//     COMBO(ide_f_combo, QK_MACRO_2),    // Replace with actual macro function
+//     COMBO(ide_go_edit_combo, QK_MACRO_3) // Replace with actual macro function
+};
