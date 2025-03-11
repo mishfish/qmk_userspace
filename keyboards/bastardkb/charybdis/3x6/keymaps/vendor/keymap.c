@@ -16,14 +16,6 @@
  */
 #include QMK_KEYBOARD_H
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-     if (!process_smtd(keycode, record)) return false;
-     if (!process_sm_layouts(keycode, record)) return false;
-     if (!process_smunicode(keycode, record)) return false;
- 
-     return true;
-}
-
 enum custom_keycodes {
      SMTD_KEYCODES_BEGIN = SAFE_RANGE,
      CKC_A, // reads as C(ustom) + KC_A, but you may give any name here
@@ -34,6 +26,13 @@ enum custom_keycodes {
 };
 #include "sm_td.h"
 
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+     if (!process_smtd(keycode, record)) return false;
+     if (!process_sm_layouts(keycode, record)) return false;
+     if (!process_smunicode(keycode, record)) return false;
+ 
+     return true;
+}
 
 enum charybdis_keymap_layers {
     LAYER_BASE = 0,
