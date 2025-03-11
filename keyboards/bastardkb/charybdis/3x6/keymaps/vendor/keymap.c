@@ -42,9 +42,9 @@ static uint16_t auto_pointer_layer_timer = 0;
 #define RAISE MO(LAYER_RAISE)
 #define PT_Z LT(LAYER_POINTER, KC_Z)
 #define PT_LCMD LT(LAYER_LOWER, KC_LGUI)
-#define PT_RCMD LT(KC_RGUI, KC_ENT)
+#define PT_RCMD MT(KC_RGUI, KC_ENT)
 #define PT_BCSPC LT(LAYER_RAISE, KC_BSPC)
-#define PT_SPC MT(LAYER_LOWER, KC_SPC)
+#define PT_SPC LT(LAYER_LOWER, KC_SPC)
 
 #define PT_SLSH LT(LAYER_POINTER, KC_SLSH)
 
@@ -58,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        KC_VOLD,    PT_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, PT_SLSH, KC_MPRV,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                                  KC_TAB,  PT_SPC,  PT_LCMD,   PT_RCMD,  PT_BCSPC
+                                  KC_TAB,  PT_SPC,  KC_LGUI,   PT_RCMD,  PT_BCSPC
   //                            ╰───────────────────────────╯ ╰──────────────────╯
   ),
 
