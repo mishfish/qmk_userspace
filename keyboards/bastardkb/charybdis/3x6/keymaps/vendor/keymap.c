@@ -224,6 +224,7 @@ const uint16_t PROGMEM rbrc_combo[] = {KC_U, KC_I, COMBO_END};
 const uint16_t PROGMEM grave_combo[] = {KC_R, KC_T, COMBO_END};
 const uint16_t PROGMEM tilda_combo[] = {KC_Y, KC_U, COMBO_END};
 const uint16_t PROGMEM quot_combo[] = {KC_P, HM_RCTL, COMBO_END};
+const uint16_t PROGMEM lower_combo[] = {PT_RCMD,  PT_BCSPC, COMBO_END};
 
 const uint16_t PROGMEM prntscr_combo[] = {KC_R, KC_E, KC_W, COMBO_END};
 const uint16_t PROGMEM ide_b_combo[] = {KC_Q, HM_LCTL, KC_Z, COMBO_END};
@@ -232,6 +233,7 @@ const uint16_t PROGMEM ide_go_edit_combo[] = {KC_P, KC_O, KC_I, COMBO_END};
 
 combo_t key_combos[] = {
     COMBO(esc_combo, KC_ESC),
+    COMBO(lower_combo, LOWER),
     COMBO(lpar_combo, KC_LPRN),
     COMBO(rpar_combo, KC_RPRN),
     COMBO(lbkt_combo, KC_LBRC),
