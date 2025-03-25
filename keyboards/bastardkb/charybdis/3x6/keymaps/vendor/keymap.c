@@ -93,6 +93,7 @@ static uint16_t auto_pointer_layer_timer = 0;
 #endif     // CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 
 #define LOWER MO(LAYER_LOWER)
+#define POINTER MO(LAYER_POINTER)
 #define RAISE MO(LAYER_RAISE)
 #define PT_Z LT(LAYER_POINTER, KC_Z)
 #define PT_LCMD LT(LAYER_LOWER, KC_LGUI)
@@ -126,11 +127,11 @@ static uint16_t auto_pointer_layer_timer = 0;
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_BASE] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
-       RGB_TOG,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_MNXT,
+       KC_VOLD,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_VOLU,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        KC_VOLU,    HM_LCTL, HM_LALT, HM_LGUI, HM_LSFT, KC_G,       KC_H,    HM_RSFT, HM_RGUI, HM_RALT, HM_RCTL, KC_MPLY,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       KC_VOLD,    PT_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, PT_SLSH, KC_MPRV,
+       POINTER,    PT_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, PT_SLSH, POINTER,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                                   PT_TAB,  PT_SPC,  KC_LGUI,   PT_RCMD,  PT_BCSPC
   //                            ╰───────────────────────────╯ ╰──────────────────╯
@@ -164,7 +165,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
        QK_BOOT,  EE_CLR, XXXXXXX, XXXXXXX, DPI_MOD, S_D_MOD,    S_D_MOD, DPI_MOD, XXXXXXX, XXXXXXX,  EE_CLR, QK_BOOT,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, HM_LCTL, HM_LALT, HM_LGUI, HM_LSFT, XXXXXXX,    XXXXXXX, HM_RSFT, HM_RGUI, HM_RALT, HM_RCTL, XXXXXXX,
+       DRGSCRL, HM_LCTL, HM_LALT, HM_LGUI, HM_LSFT, XXXXXXX,    XXXXXXX, HM_RSFT, HM_RGUI, HM_RALT, HM_RCTL, DRGSCRL,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        XXXXXXX, _______, DRGSCRL, SNIPING, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, SNIPING, DRGSCRL, _______, XXXXXXX,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
